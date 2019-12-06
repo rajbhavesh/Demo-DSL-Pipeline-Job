@@ -1,8 +1,10 @@
-pipelineJob('example') {
+pipelineJob('Job-KubeadmCreation') {
     definition {
-        cps {
-            script(readFileFromWorkspace('project-a-workflow.groovy'))
-            sandbox()
+        cpsScm {
+            scm {
+                git('https://github.com/rajbhavesh/Demo.git')
+            }
+            scriptPath('demo/jenkinsfile')
         }
     }
 }
